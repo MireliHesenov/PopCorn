@@ -1,0 +1,48 @@
+@media (max-width: 1024px){
+    .movie-header{
+        flex-direction: column;
+        align-items: center;
+    }
+    .movie-info{
+        color: #EEEEEE;
+        padding: 0 1.875em 0 8.625em;
+        margin-top: 75px;
+    }
+    .movie-info h1{
+        font-size: 2.675em;
+    
+    }
+    .movie-info h2{
+        margin-top: 50px;
+        font-size: 2.15em;
+        display: inline-block;
+    }
+    .movie-info span{
+         margin-left: 2.25em;
+         display: inline-flex;
+         align-items: center;
+    }
+    .movie-info span svg{
+    
+        margin-right: 1.125em ;
+        width: 2.45em;
+        height: 1.75em;
+    }
+    .movie-info p{
+        margin-top: 2.5em;
+        font-size: 1.25em ;
+    
+    }
+}
+@media (max-width:1400px){
+    .user-comments{
+        flex-direction: column;
+    }
+    .user-comments::after{
+        content: none;
+    }
+    .user-comment{
+        width: 100%;
+        margin-top: 1rem;
+    }
+}

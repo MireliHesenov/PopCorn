@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24.64" viewBox="0 0 25 24.64">
+  <g id="notif" transform="translate(0 0.4)">
+    <g id="_023-notification" data-name="023-notification" transform="translate(0 1.2)">
+      <path id="Path" d="M19.132,19.433l-1.648-2.748a8.161,8.161,0,0,1-1.164-4.2V10.08a6.729,6.729,0,0,0-4.8-6.437V1.92a1.92,1.92,0,0,0-3.84,0V3.643a6.729,6.729,0,0,0-4.8,6.437v2.407a8.166,8.166,0,0,1-1.163,4.2L.068,19.432a.481.481,0,0,0,.411.728H18.72a.48.48,0,0,0,.412-.727Z" fill="rgba(243,241,252,0.55)"/>
+      <path id="Path-2" data-name="Path" d="M0,0A3.19,3.19,0,0,0,2.88,1.92,3.191,3.191,0,0,0,5.76,0H0Z" transform="translate(6.72 21.12)" fill="rgba(243,241,252,0.55)"/>
+    </g>
+    <ellipse id="Oval" cx="4" cy="4.5" rx="4" ry="4.5" transform="translate(17 -0.4)" fill="#1ec07a"/>
+  </g>
+</svg>
