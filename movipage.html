@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css" integrity="sha512-esCylxvZEDuZ+3L2JRa6wYVNDihaDw5fDBUPZ9X9igrCIMHILsPiR4A7+dKmqqzvvIH8lzRlRV4b4V7Q9es/ew==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 
-   
-<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-<script src="assets/js/autoplay.js" defer></script>
+
+    <script src="assets/js/cinema.js" defer></script>
+    <script src="assets/js/autoplay.js" defer></script>
+
     
 </head>
-<body>
+<body onload="getMovie()">
 
     <main>
         <!-- Movie Header Section  -->
@@ -125,84 +126,10 @@
                                 <a href="#" data-glide-dir=">"><i class="fas fa-angle-right active"></i></a>
                             </div>
                         </div>
+
                         <div class="glide__track" data-glide-el="track">
                             <ul class="glide__slides">
-                                <li id="movie-video" class="glide__slide">
-                                    <div class="video-thumbnail">
-                                        <video  muted  class="video" src="./Galatasaray1-0JuventuŞampiyonlarLigiMaçÖzetiTürkçeSpike.mp4" type="video/mp4">
-                                    
-                                       </video>
-                                        <div id="video-duration">5:47</div>
-                                       
-                                       <a href="#" id="playButton">
-                                           <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104">
-                                               <circle id="Oval" cx="51" cy="51" r="51" transform="translate(1 1)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
-                                               <path id="Path" transform="translate(37.43 30.14)" d="M1.45.183A.884.884,0,0,0,.5.1.955.955,0,0,0,0,.95V42.768a.955.955,0,0,0,.5.848.881.881,0,0,0,.951-.081L28.774,22.626a.977.977,0,0,0,0-1.534Z" fill="#fff"/>
-                                             </svg>
-                                       </a>
-                             
-                                    </div>
-                                    <p id="title">
-                                       John Wick: Capitulo 3 – Parabellum Keanu Reeves Official Movie Interview
-                                    </p>
-                                </li>
-       
-                                <li id="movie-video" class="glide__slide">
-                                   <div class="video-thumbnail">
-                                       <img src="assets/images/Rectangle 11.png" alt="" id="video-image">
-                                       <div id="video-duration">5:47</div>
-                                      
-                                      <a href="#" id="playButton">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104">
-                                              <circle id="Oval" cx="51" cy="51" r="51" transform="translate(1 1)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
-                                              <path id="Path" transform="translate(37.43 30.14)" d="M1.45.183A.884.884,0,0,0,.5.1.955.955,0,0,0,0,.95V42.768a.955.955,0,0,0,.5.848.881.881,0,0,0,.951-.081L28.774,22.626a.977.977,0,0,0,0-1.534Z" fill="#fff"/>
-                                            </svg>
-                                      </a>
-                            
-                                   </div>
-                                   <p id="title">
-                                      John Wick: Capitulo 3 – Parabellum Keanu Reeves Official Movie Interview
-                                   </p>
-                               </li>
-       
-                               <li id="movie-video" class="glide__slide">
-                                   <div class="video-thumbnail">
-                                       <img src="assets/images/Rectangle 11.png" alt="" id="video-image">
-                                       <div id="video-duration">5:47</div>
-                                      
-                                      <a href="#" id="playButton">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104">
-                                              <circle id="Oval" cx="51" cy="51" r="51" transform="translate(1 1)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
-                                              <path id="Path" transform="translate(37.43 30.14)" d="M1.45.183A.884.884,0,0,0,.5.1.955.955,0,0,0,0,.95V42.768a.955.955,0,0,0,.5.848.881.881,0,0,0,.951-.081L28.774,22.626a.977.977,0,0,0,0-1.534Z" fill="#fff"/>
-                                            </svg>
-                                      </a>
-                            
-                                   </div>
-                                   <p id="title">
-                                      John Wick: Capitulo 3 – Parabellum Keanu Reeves Official Movie Interview
-                                   </p>
-                               </li>
-       
-                               <li id="movie-video" class="glide__slide">
-                                   <div class="video-thumbnail">
-                                       <img src="assets/images/Rectangle 11.png" alt="" id="video-image">
-                                       <div id="video-duration">5:47</div>
-                                      
-                                      <a href="#" id="playButton">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104">
-                                              <circle id="Oval" cx="51" cy="51" r="51" transform="translate(1 1)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
-                                              <path id="Path" transform="translate(37.43 30.14)" d="M1.45.183A.884.884,0,0,0,.5.1.955.955,0,0,0,0,.95V42.768a.955.955,0,0,0,.5.848.881.881,0,0,0,.951-.081L28.774,22.626a.977.977,0,0,0,0-1.534Z" fill="#fff"/>
-                                            </svg>
-                                      </a>
-                            
-                                   </div>
-                                   <p id="title">
-                                      John Wick: Capitulo 3 – Parabellum Keanu Reeves Official Movie Interview
-                                   </p>
-                               </li>
-       
-                           
-       
+                               
                                
                                </ul>
                         </div>
@@ -221,51 +148,21 @@
         <section class="other-movies">
             <h4> If you like this movie, you might also like ...</h4>
             <ul id="similarMovies">
-                <li>
-                    <a href="#">
-                        <img src="assets/images/6bc403a58a847e9348363b7e660128c9.png" alt="">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <img src="assets/images/6bc403a58a847e9348363b7e660128c9.png" alt="">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <img src="assets/images/6bc403a58a847e9348363b7e660128c9.png" alt="">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <img src="assets/images/6bc403a58a847e9348363b7e660128c9.png" alt="">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <img src="assets/images/6bc403a58a847e9348363b7e660128c9.png" alt="">
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <img src="assets/images/6bc403a58a847e9348363b7e660128c9.png" alt="">
-                    </a>
-                </li>
+                
             </ul>
         </section>
     </footer>
 
-
+    
+    
+   
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide" ></script>
+    
     <script>
     new Glide('.glide',{
         startAt: 0,
         type:'slider',
-        perView:3,
+        perView:5,
         breakpoints:{
             1500:{
                 perView:2
@@ -277,10 +174,7 @@
         }
     }).mount()
     </script>
-    <script src="assets/js/cinema.js"></script>
-    <script>
-        getMovie()
-    </script>
+    
 
 
 </body>
