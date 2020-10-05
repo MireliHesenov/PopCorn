@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'LMMonoPropLt10-BoldOblique';
     src: url('../fonts/LMMonoPropLt10-BoldOblique.eot');
-    src: url('../fontsLMMonoPropLt10-BoldOblique.eot?#iefix') format('embedded-opentype'),
-         url('LMMonoPropLt10-BoldOblique.svg#LMMonoPropLt10-BoldOblique') format('svg'),
+    src: url('../fonts/LMMonoPropLt10-BoldOblique.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/LMMonoPropLt10-BoldOblique.svg#LMMonoPropLt10-BoldOblique') format('svg'),
          url('../fonts/LMMonoPropLt10-BoldOblique.ttf') format('truetype'),
          url('../fonts/LMMonoPropLt10-BoldOblique.woff') format('woff'),
          url('../fonts/LMMonoPropLt10-BoldOblique.woff2') format('woff2');
@@ -314,46 +314,15 @@
     padding-left: 3.65%;
     overflow: hidden;
   
-}
+} 
 .videos ul li{
-    max-width: 40.8125rem !important ;
+    max-width: min-content !important ;
     display: flex;
     flex-direction: column;
+    justify-content: center !important;
+    padding: 0 1rem;
     
-}
-.videos ul li:not(:first-child){
-    margin-left: 3.75rem ;
-}
-.video-thumbnail{
     
-    width: 100%;
-    height: 20.0625rem;
-    position: relative;
-}
-.video-thumbnail img{
-    width: 100%;
-    height: 100%;
-}
-.video-thumbnail #playButton{
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
-
-}
-.video-thumbnail #video-duration{
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    width: 7.25rem;
-    height: 3.625rem;
-    background-color: #000;
-    color: #fff;
-    font-size: 2.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .videos ul li #title{
     font-size: 2.25rem;
