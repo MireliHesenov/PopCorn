@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
 function getMovies(query){
 
-    fetch(base_url+'search/movie?api_key=' + api_key + '&query='+ query)
+    fetch(`${base_url}search/movie?api_key=${api_key}&query=${query}`)
         .then(response => response.json())
         .then(response => {
             let movies = response.results;
@@ -47,12 +47,12 @@ function getMovies(query){
 
 function movieSelected(id){
     sessionStorage.setItem('movieId' , id);
-    window.location = './MoviePage.html'
+    window.location = './moviepage.html'
 }
 
-function getMovie(){
+    function getMovie(){
     let movieId = sessionStorage.getItem('movieId');
-    fetch(base_url+'movie/'+ movieId +'?api_key='+api_key)
+    fetch(`${base_url}movie/${movieId}?api_key=${api_key}`)
         .then(response => response.json())
         .then(  response => {
 
@@ -65,7 +65,7 @@ function getMovie(){
                                                                         url(https://image.tmdb.org/t/p/w500${movie.backdrop_path})  no-repeat `;
             document.querySelector('.movie-header').style.backgroundSize = 'cover';
                                                                     
-            
+            movieTrailerHandler(movie.title)    
         })
         .catch(err => {
             console.log(err);
@@ -73,13 +73,14 @@ function getMovie(){
 
     getMovieCredits(movieId);
     getSimilarMovies(movieId);
+   
     
 
 }
 
 function getMovieCredits(id){
 
-    fetch(base_url + 'movie/' + id + '/credits?api_key=' + api_key)
+    fetch(`${base_url}movie/${id}/credits?api_key=${api_key}`)
         .then(response => response.json())
         .then(response => {
             let cast = response.cast;
@@ -105,7 +106,7 @@ function getMovieCredits(id){
 }
 
 function getSimilarMovies(id){
-    fetch(base_url + 'movie/' + id +'/similar?api_key='+api_key)
+    fetch(`${base_url}movie/${id}/similar?api_key=${api_key}`)
         .then(response => response.json())
         .then(response => {
             let  movies = response.results
@@ -127,3 +128,63 @@ function getSimilarMovies(id){
         });
     
 }
+
+async function movieTrailerHandler(movie){
+    
+    let key = 'AIzaSyDl2BilzV8ESZ3WAyu9SkEFUGopm2LZetA';
+    let url = 'https://www.googleapis.com/youtube/v3/search'
+    let query = movie;
+    let mySlider = document.querySelector('.glide') 
+    
+ 
+  await fetch(`${url}?part=snippet
+                   &type=video
+                   &q=${query}
+                   &key=${key}
+                   &maxResults=6 `)
+            .then(response => response.json())
+            .then(response =>{
+                console.log(response)        
+                let videos = response.items;
+                let html = ''
+                videos.forEach( video => {
+                    console.log(video)
+                    html += `
+                    <li id="movie-video" class="glide__slide">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/${video.id.videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                    </iframe>
+                        
+                    <p id="title">
+                    ${video.snippet.title}
+                    </p>
+                </li>
+                    `
+                })
+
+                document.querySelector('.glide__slides').innerHTML = html;
+            })
+            .catch(err => {
+                console.log(err);
+            });
+
+    new Glide('.glide',
+    {
+        startAt: 0,
+        type:'slider',
+        perView:3,
+        breakpoints:{
+            1700:{
+                perView:2.5
+            },
+            1450:{
+                perView:2
+            },
+            1150:{
+                perView:1
+            }
+            
+        }
+    }).mount()
+
+}
+
