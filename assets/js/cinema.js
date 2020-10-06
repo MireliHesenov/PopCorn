@@ -50,9 +50,10 @@ function movieSelected(id){
     window.location = './moviepage.html'
 }
 
-    function getMovie(){
+async function getMovie(){
+    
     let movieId = sessionStorage.getItem('movieId');
-    fetch(`${base_url}movie/${movieId}?api_key=${api_key}`)
+  await fetch(`${base_url}movie/${movieId}?api_key=${api_key}`)
         .then(response => response.json())
         .then(  response => {
 
@@ -71,16 +72,18 @@ function movieSelected(id){
             console.log(err);
         });
 
-    getMovieCredits(movieId);
-    getSimilarMovies(movieId);
-   
+  await  getMovieCredits(movieId);
+  await  getSimilarMovies(movieId);
+
+  document.querySelector('.loader-wrapper').style.display = 'none';
+  document.body.style.overflow = "auto"
     
 
 }
 
-function getMovieCredits(id){
+async function getMovieCredits(id){
 
-    fetch(`${base_url}movie/${id}/credits?api_key=${api_key}`)
+ await  fetch(`${base_url}movie/${id}/credits?api_key=${api_key}`)
         .then(response => response.json())
         .then(response => {
             let cast = response.cast;
@@ -88,6 +91,7 @@ function getMovieCredits(id){
             let html = '';
             cast.forEach(actor =>{
                 
+                if(actor.profile_path == null) return
                 html +=`
                 <li class="actor">
                     <img src="https://image.tmdb.org/t/p/w400${actor.profile_path}" alt="">
@@ -105,8 +109,8 @@ function getMovieCredits(id){
         });
 }
 
-function getSimilarMovies(id){
-    fetch(`${base_url}movie/${id}/similar?api_key=${api_key}`)
+async function getSimilarMovies(id){    
+    await fetch(`${base_url}movie/${id}/similar?api_key=${api_key}`)
         .then(response => response.json())
         .then(response => {
             let  movies = response.results
@@ -188,3 +192,14 @@ async function movieTrailerHandler(movie){
 
 }
 
+document.querySelector('#seeMore').addEventListener('click' , (e)=>{
+
+    e.preventDefault()
+    if(document.querySelector('.cast').style.flexWrap == ""){
+    document.querySelector('.cast').style.flexWrap = 'wrap';
+    document.querySelector('#seeMore').innerText = 'See less'
+    }else{
+        document.querySelector('.cast').style.flexWrap = '';
+        document.querySelector('#seeMore').innerText = 'See the full cast'
+    }
+})

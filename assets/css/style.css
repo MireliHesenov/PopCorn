@@ -10,7 +10,9 @@
     font-style: normal;
   }
   
-
+body{
+    overflow: hidden;
+}
 .page-wrap{
     width: 92.7%;
     margin: 0 auto;
@@ -23,9 +25,6 @@
     display: flex;
     padding: 5.5em 3.65%;
     justify-content: space-between;
-}
-.movie-header .movie-poster{
-    width: fit-content;
 }
 .movie-info{
     color: #EEEEEE;
@@ -108,24 +107,27 @@
     display: flex;
     margin-bottom: 3em;
     overflow: hidden;
+    
+
  
    
 }
 .cast .actor{
     display: flex;
     flex-direction: column;
-    min-width: 16.25rem;
+    min-width: calc( (100% - 6rem) / 6);
+    margin-top: 1rem;
  
 }
-.cast .actor:not(:first-child){
-    margin-left: 1em ;
+.cast .actor{
+    margin-left: 1rem;
 }
 .cast .actor img{
-    width: 16.25rem;
+    width: 100%;
     height: 18.75rem;
 }
 .actor-info{
-    width: 16.25rem;
+    width: 100%;
     height: 8.43rem ;
     background-color: #151F2E;
     text-align: center;
@@ -301,9 +303,6 @@
 }
 .controller a i{
     font-size: 1.5rem;
-    color: #707070;
-}
-.controller a i.active{
     color: #ffffff;
 }
 .videos ul{
@@ -356,3 +355,34 @@ footer .other-movies{
 .other-movies li a{
     display: block;
 }
+
+
+/* Loading Animation */
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:  #151F2E;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+  }
+  .loader {
+    display: inline-block;
+    width: 3.5rem;
+    height: 3.5rem;
+    position: relative;
+    animation: loader 2s infinite ease;
+  }
+  
+  @keyframes loader {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+  }
+  
