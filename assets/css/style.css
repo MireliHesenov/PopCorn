@@ -1,18 +1,159 @@
-@font-face {
-    font-family: 'LMMonoPropLt10-BoldOblique';
-    src: url('../fonts/LMMonoPropLt10-BoldOblique.eot');
-    src: url('../fonts/LMMonoPropLt10-BoldOblique.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/LMMonoPropLt10-BoldOblique.svg#LMMonoPropLt10-BoldOblique') format('svg'),
-         url('../fonts/LMMonoPropLt10-BoldOblique.ttf') format('truetype'),
-         url('../fonts/LMMonoPropLt10-BoldOblique.woff') format('woff'),
-         url('../fonts/LMMonoPropLt10-BoldOblique.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
 body{
     overflow: hidden;
 }
+main{
+    min-height: 100%;
+}
+.search-result{
+    float: left;
+    padding: 1em 3.65%;
+}
+.search-result li{
+    width: calc(100% / 8);
+    height: 18.75em;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    float: left;
+}
+.search-result li img{
+
+    width: 100%;
+    height: 100%;
+}
+.main-header{
+    
+    padding: 0 3.65%;
+    background-color: #182131 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-header .search-box{
+    position: relative;
+    display: inline-block;
+    max-height: min-content;
+}
+.main-header .search-box input{
+    width:398px;
+    border-radius:30px;
+    background-color: rgba(255,255,255,0.32);
+    flex-shrink: 0;
+    padding: 1.25em 2.375em;
+    color: #fff;
+    border: none;
+}
+.search-box svg{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    
+}
+.main-header .user-side{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#notification{
+    margin-left: 2.5em;
+}
+.user-side .account-menu{
+    display: flex;
+    margin-left: 3em;
+      
+}
+.account-menu .profile-photo{
+    width: 3.25em;
+    height: 3.25em;
+    background-color: #fff;
+}
+
+.account-menu .account-settings{
+    display: flex;
+    align-items: center;
+    margin-left: 2.5em;
+    color: #FFF;
+    font-size: 1.125em;
+}
+.account-settings a{
+    margin-left:2.625em
+}
+main{
+    background: #020916;
+}
+.main-slider ul{
+    display: flex;
+    width: 100%;
+    padding: 1.875rem 0;
+}
+.main-slider ul .slide{
+    
+    padding:9.5em 0 4em 6.75em;
+    background:linear-gradient(180deg,rgba(7,41,86,0.12),rgba(2,9,22)),
+                     url(../images/Mask.png) no-repeat ;
+    
+    background-position: left top !important;
+    background-size: cover !important;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 0.625rem;
+}
+.slide::after{
+    content: '';
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    bottom: 0;
+    background: url(../images/johnWick.jpg) no-repeat ;
+    position: absolute;
+    z-index: -1000;
+    filter: blur(40px);
+}
+.slide span{
+    font-size: 1.125em;
+    color: rgba(255,255,255,0.70);
+}
+.slide h2{
+    margin-top: 1rem;
+    font-size: 4.125em;
+    color: #EEEEEE;
+}
+.slide h2 + span{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.65em;
+    color : rgba(255,255,255,0.70);
+}
+.slide span + span{
+    display: flex;
+    align-items: center;
+}
+.slide span svg{
+    margin-right: 0.75em ;
+}
+
+.movie-list{
+    color: #FFFFFF ;
+    font-size: 2em;
+}
+.movie-list ul{
+    display: flex;
+}
+.movie-list .header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3.65%;
+    margin-top: 2em;
+    margin-bottom: 1rem;
+}
+.controls i {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+
 .page-wrap{
     width: 92.7%;
     margin: 0 auto;
@@ -108,16 +249,16 @@ body{
     margin-bottom: 3em;
     overflow: hidden;
     
-
- 
+    
    
 }
 .cast .actor{
     display: flex;
-    flex-direction: column;
-    min-width: calc( (100% - 6rem) / 6);
+    flex-direction: column ;
+    flex-shrink: 0;
+    flex-basis: calc(  (100% - 6rem) / 6 ) ;
     margin-top: 1rem;
- 
+    
 }
 .cast .actor{
     margin-left: 1rem;
@@ -216,7 +357,7 @@ body{
     opacity: 0.7;
 
 }
-.user-comment img{
+.profile-photo{
     width: 7.5em;
     height: 7.5em;
     border-radius: 50%;
@@ -234,6 +375,66 @@ body{
 }
 .user-comment span{
     color: #999999;
+}
+.reviews form{
+    display: none;
+    padding: 1em 3.65%;
+}
+.reviews form .profile-photo{
+    width: 4em;
+    height: 4em;
+    margin-left: 1rem;
+    
+}
+.reviews form .user-comment-form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    justify-content: space-around;
+    
+    
+}
+.user-comment-form textarea{
+    width: 100%;
+    height: 5rem;
+    background-color: #707070;
+    border-radius: 1rem;
+    color: #EEEEEE;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+
+}
+.user-comment-form button{
+    display: inline-block;
+    padding: 0.5rem 2.5rem;
+    border-radius: 0.5rem;
+    max-width: max-content;
+    align-self: flex-end;
+    margin-top: 1rem;
+    background-color: #151F2E;
+    color: #999999;
+}
+.user-comment-form .rating input{
+    display: none;
+}
+.user-comment-form .rating label{
+  font-size: 18px;
+  color: #fff;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+  color: #fd4;
+}
+input:checked ~ label{
+  color: #fd4;
+}
+input#rate-5:checked ~ label{
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
 }
 .rating{
     margin-left: 3.125rem;
@@ -257,6 +458,7 @@ body{
     color: #fff;
     font-size: 1.625em;
     padding-left: 3.65%;
+
 }
 .reviews a{
     width: 13.625rem;
@@ -328,12 +530,9 @@ body{
     color: #fff;
     line-height: 3rem;
 }
-footer{
-    background: #020916;
-    padding: 0  3.65% ;
-}
-footer .other-movies{
-    padding: 5rem 0 4rem ;
+
+.other-movies{
+    padding: 5rem 3.65% 4rem ;
     border-top: 1px solid #707070;
 }
 .other-movies h4{
