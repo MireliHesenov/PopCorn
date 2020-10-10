@@ -11,7 +11,7 @@ main{
 .search-result li{
     width: calc(100% / 8);
     height: 18.75em;
-    padding: 0.5rem 0;
+    padding:  0.5rem ;
     display: flex;
     justify-content: center;
     float: left;
@@ -23,19 +23,28 @@ main{
 }
 .main-header{
     
-    padding: 0 3.65%;
+    padding: 1.25em 3.65%;
     background-color: #182131 ;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex: 1;
+}
+.main-header .logo{
+    max-width: 3.125rem !important;
+    height: 3.125rem;
+}
+.logo svg{
+
+    width: 100%;
+    height: 100%;
 }
 .main-header .search-box{
     position: relative;
-    display: inline-block;
-    max-height: min-content;
+    width: 25em;
 }
 .main-header .search-box input{
-    width:398px;
+    width:100%;
     border-radius:30px;
     background-color: rgba(255,255,255,0.32);
     flex-shrink: 0;
@@ -54,9 +63,10 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 #notification{
-    margin-left: 2.5em;
+    margin-left :2.75em;
 }
 .user-side .account-menu{
     display: flex;
@@ -77,6 +87,7 @@ main{
     font-size: 1.125em;
 }
 .account-settings a{
+    max-width: max-content !important;
     margin-left:2.625em
 }
 main{
@@ -147,6 +158,13 @@ main{
     padding: 0 3.65%;
     margin-top: 2em;
     margin-bottom: 1rem;
+}
+.movie-list ul li  {
+
+    padding: 0 7rem !important;
+}
+.movie-list ul li img{
+    height: 100%;
 }
 .controls i {
     color: #fff;
@@ -256,16 +274,16 @@ main{
     display: flex;
     flex-direction: column ;
     flex-shrink: 0;
-    flex-basis: calc(  (100% - 6rem) / 6 ) ;
+    width: calc(  (100% - 6rem) / 6 )  ;
+    max-height: 27rem;
     margin-top: 1rem;
+    margin-left: 1rem;
     
 }
-.cast .actor{
-    margin-left: 1rem;
-}
+
 .cast .actor img{
     width: 100%;
-    height: 18.75rem;
+    max-height: 18.75rem;
 }
 .actor-info{
     width: 100%;

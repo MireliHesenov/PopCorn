@@ -2,14 +2,20 @@
     .movie-header{
         flex-direction: column;
         align-items: center;
+        padding: 5rem 0;
+    }
+    .movie-poster img{
+    width: 20em;
     }
     .movie-info{
         color: #EEEEEE;
-        padding: 0 1.875em 0 8.625em;
+        padding: 0 ;
         margin-top: 75px;
+        text-align: center;
     }
     .movie-info h1{
-        font-size: 2.675em;
+        font-size: 3em;
+        padding: 0 3.65%;
     
     }
     .movie-info h2{
@@ -30,8 +36,12 @@
     }
     .movie-info p{
         margin-top: 2.5em;
-        font-size: 1.25em ;
+        font-size: 1.25em;
+        padding: 0 5%;
     
+    }
+    .actor{
+        width: calc((100% - 5em ) / 5) !important;
     }
 }
 @media (max-width:1400px){
@@ -45,4 +55,27 @@
         width: 100%;
         margin-top: 1rem;
     }
+    .user-comment::after{
+        content: none;
+    }
 }
+
+/* @media (max-width:800px){
+    .actor{
+        width: calc((100% - 4em)  / 4) !important;
+    }
+}
+@media (max-width:650px){
+    .actor{
+        width: calc((100% - 3em)  / 3) !important;
+    }
+}
+
+@media (max-width:550px){
+    .details-menu li a{
+        font-size: 1.25em ;
+    }
+    .actor p{
+        font-size: 1.3em;
+    }
+} */

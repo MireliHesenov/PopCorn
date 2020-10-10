@@ -99,7 +99,7 @@ function movieSelected(id){
                 perView:16,
                 type:'carousel',
                 startAt:1.5,
-                autoplay:3000
+                autoplay:3000,
                 
             }).mount()
         })
@@ -108,6 +108,8 @@ function movieSelected(id){
 
       
 }
+
+
 
 async function upcomingMovieSlider(){
 
