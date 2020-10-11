@@ -72,7 +72,8 @@ async function getMovies(query){
 
 } 
 
-function movieSelected(id){
+function movieSelected(e,id){
+    e.preventDefault()
     sessionStorage.setItem('movieId' , id);
     window.location = './moviepage.html'
 }
@@ -96,6 +97,7 @@ function movieSelected(id){
             })
             div.innerHTML =html
             new Glide(`.${glide}`,{
+                draggable:true,
                 perView:16,
                 type:'carousel',
                 startAt:1.5,
@@ -130,7 +132,7 @@ async function upcomingMovieSlider(){
 
            let slide = document.createElement('li');
            slide.classList = 'slide glide__slide';
-           slide.setAttribute('onclick',`movieSelected(${result.id})`)
+           slide.setAttribute('onclick',`movieSelected(event,${result.id})`)
            slide.style.background = `linear-gradient(180deg,rgba(7,41,86,0.12),rgba(2,9,22)),
                                     url(https://image.tmdb.org/t/p/w500${result.backdrop_path})  no-repeat `
            slide.innerHTML = `
@@ -173,6 +175,7 @@ async function upcomingMovieSlider(){
         new Glide('.glide1',{
             type:'carousel',
             focusAt:'center',
+            draggable:true,
             perView:1.5,
             autoplay:3000
         }).mount()
@@ -268,7 +271,7 @@ async function getSimilarMovies(id){
          movies.slice(0, 6).forEach(movie => {
             html +=`
             <li>
-                <a onclick="movieSelected(${movie.id})">
+                <a onclick="movieSelected(event,${movie.id})">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="">
                 </a>
             </li>
@@ -357,7 +360,7 @@ async function pageLoader(functionName){
 function renderMoviePoster(movie,className = ""){
     if(movie.poster_path)
     return  `<li class="${className}">
-    <a onclick="movieSelected(${movie.id})"><img src="https://image.tmdb.org/t/p/w200${movie.poster_path}"  </a>
+    <a onclick="movieSelected(event,${movie.id})"><img src="https://image.tmdb.org/t/p/w200${movie.poster_path}"  </a>
     </li> `
     
 }
